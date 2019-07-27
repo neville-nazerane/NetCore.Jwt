@@ -9,28 +9,13 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using NetCore.Jwt;
 
-namespace NetCore.Jwt
+namespace Microsoft.AspNetCore.Mvc
 {
     public static class AuthenticationExtensions
     {
 
-        public static AuthenticationBuilder AddNetCoreJwt(this AuthenticationBuilder builder, Action<NetCoreTokenOptions> configuration = null)
-        {
-
-            var opts = new NetCoreTokenOptions();
-            configuration?.Invoke(opts);
-
-            builder.Services.AddSingleton<ITokenOptions>(opts)
-                            .AddSingleton<IBearerManager, BearerManager>();
-
-            builder.AddJwtBearer(NetCoreJwtDefaults.SchemeName, config => {
-                
-                config.TokenValidationParameters = opts.TokenValidationParameters;
-            });
-
-            return builder;
-        }
 
         static IBearerManager GetManager(this HttpContext context) => context.RequestServices.GetService<IBearerManager>();
 

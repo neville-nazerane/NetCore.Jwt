@@ -1,22 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>NetCore.Jwt</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <Authors>Neville Nazerane</Authors>
     <Description>
       A simple and straightforward jwt authentication setup
     </Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>
-      - Authentication extension AddNetCoreJwt()
-      - HttpContext extension GenerateBearerToken()
-      - bearer manager service IBearerManager
+      - Updated namespaces for extensions
     </PackageReleaseNotes>
     <PackageTags>netcore jwt token direct</PackageTags>
     <PackageProjectUrl>https://github.com/neville-nazerane/netcore.jwt</PackageProjectUrl>
   </PropertyGroup>
+  
+  
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.3" />
